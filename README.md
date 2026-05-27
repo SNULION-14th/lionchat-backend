@@ -2,8 +2,6 @@
 
 멋사 선배 사자에게 질문하면 Google Gemini가 답해주는 챗봇 백엔드.
 
-> 이 레포에는 4단계 챌린지를 위한 결함이 의도적으로 내장되어 있습니다.
-
 ## 기술 스택
 
 - Backend: Django 5 + DRF + simplejwt
@@ -39,8 +37,8 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-> ⚠️ `manage.py runserver`는 단일 워커라 챌린지 결함을 그대로 재현하지 못한다.
-> 실제 결함 시나리오를 보려면 gunicorn으로 워커 2개를 띄워라:
+> ⚠️ `manage.py runserver`를 그대로 사용하면 챌린지를 올바르게 수행할 수 없습니다! 
+> 챌린지를 수행하는 과정에서 위 명령어 대신 아래 명령어를 사용해주세요. 
 >
 > ```bash
 > gunicorn --workers 2 --bind 0.0.0.0:8000 seminar.wsgi:application
@@ -48,7 +46,7 @@ python manage.py runserver
 
 ## AWS 배포
 
-**작년 AWS 배포 가이드** ("4. 배포해보자!" 페이지)를 그대로 따라가면 됩니다.
+**AWS 배포 가이드**를 그대로 따라가면 됩니다.
 차이점:
 
 - 가이드의 `11th-week-back` → `lionchat-backend`

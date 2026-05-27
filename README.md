@@ -24,7 +24,7 @@
 1. <https://aistudio.google.com/app/apikey> 접속 (Google 계정 로그인)
 2. "Create API key" 클릭
 3. 발급된 키를 `.env`의 `LLM_API_KEY`에 붙여넣기
-4. **무료 티어** — Gemini 1.5 Flash 모델, 분당 15 RPM 한도, 카드 등록 X
+4. **무료 티어** — Gemini 2.0 Flash 모델, 분당 15 RPM 한도, 카드 등록 X
 5. 연속 채점은 *분당 2~3회 이하*로 자제 (RPM 한도 초과 방지)
 
 ## 로컬 실행

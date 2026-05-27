@@ -18,7 +18,7 @@ from .serializers import (
 
 # Gemini 클라이언트는 모듈 import 시 한 번만 초기화한다.
 genai.configure(api_key=settings.LLM_API_KEY)
-_model = genai.GenerativeModel('gemini-2.0-flash')
+_model = genai.GenerativeModel('gemini-2.5-flash')
 
 
 def _issue_tokens(user):

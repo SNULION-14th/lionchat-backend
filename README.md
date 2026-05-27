@@ -22,7 +22,7 @@
 1. <https://aistudio.google.com/app/apikey> 접속 (Google 계정 로그인)
 2. "Create API key" 클릭
 3. 발급된 키를 `.env`의 `LLM_API_KEY`에 붙여넣기
-4. **무료 티어** — Gemini 2.5 Flash 모델, 분당 15 RPM 한도, 카드 등록 X
+4. **무료 티어 사용** : Gemini 2.5 Flash 모델, 분당 15 RPM 한도, 카드 등록 X
 5. 연속 채점은 *분당 2~3회 이하*로 자제 (RPM 한도 초과 방지)
 
 ## 로컬 실행
@@ -37,8 +37,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-> ⚠️ `manage.py runserver`를 그대로 사용하면 챌린지를 올바르게 수행할 수 없습니다! 
-> 챌린지를 수행하는 과정에서 위 명령어 대신 아래 명령어를 사용해주세요. 
+> 원격 배포시에는 배포 가이드를 따라 `manage.py runserver`를 그대로 사용하는 것이 아닌 gunicorn을 사용해야하는데, 본 과제에서는 올바른 챌린지 수행을 위해서 배포 가이드에 나와있는 gunicorn 실행 명령 대신 아래 명령어를 사용해주세요. 배포 가이드대로 gunicorn을 실행하면 과제 채점이 실패합니다!
 >
 > ```bash
 > gunicorn --workers 2 --bind 0.0.0.0:8000 seminar.wsgi:application
